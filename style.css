@@ -1,3 +1,8 @@
+html {
+    box-sizing: border-box;
+}
+
+
 body {
     background-color: rgb(52, 52, 53);
     color: white;
@@ -14,11 +19,13 @@ main {
 .slider-wrapper {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     width: 50vw;
     margin: 0 auto;
     overflow: hidden;
     margin-top: 15vh;
     height: 70vh;
+    justify-content: space-between;
 }
 
 .slider-line {
@@ -32,6 +39,7 @@ main {
 
 .slide {
     width: 25%;
+    border-radius: 5%;
 }
 
 .slide>img {
@@ -39,35 +47,31 @@ main {
     width: 100%;    
 }
 
-.des-and-controls {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 50%;
-
-
-}
 
 .des-wrapper {
-    width: 50%;
-    height: 4rem;
+    width: 31%;
+    height: 1.5rem;
     overflow: hidden;
 }
 
 .description {
-    display: inline-block;
-    height: 400%;
-    width: 50%;
+    height: 100%;
+    width: 400%;
+    display: flex;
 }
 
 .text {
-    height: 25%
+    width: 25%;
 }
 
 #slide1:checked ~ .slider-line {
     margin-left: 0%;
     transition: 3s ease-in-out;
+}
+
+#slide3:checked ~ .des-wrapper>.description{
+    margin-left: 0;
+    transition: 1s ease-in-out;
 }
 
 #slide1:checked ~ .controls>#sl1label {
@@ -80,7 +84,7 @@ main {
 }
 
 #slide2:checked ~ .des-wrapper>.description{
-    margin-top: -100%;
+    margin-left: -100%;
     transition: 1s ease-in-out;
 }
 
@@ -93,16 +97,22 @@ main {
     transition: 3s ease-in-out;
 }
 
-#slide2:checked ~ .des-wrapper.description{
-    margin-top: -100%;
-    transition: 1s ease-in-out;
+#slide3:checked ~ .des-wrapper>.description{
+    margin-left: -200%;
+    transition: 3s ease-in-out;
 }
+
 
 #slide3:checked ~ .controls>#sl3label {
     background-color: blue;
 }
 
 #slide4:checked ~ .slider-line {
+    margin-left: -300%;
+    transition: 3s ease-in-out;
+}
+
+#slide4:checked ~ .des-wrapper>.description{
     margin-left: -300%;
     transition: 3s ease-in-out;
 }
@@ -115,8 +125,8 @@ main {
 
 .controls {
     display: flex;
-    align-items: center;
-    height: 10%;
+    /* align-items: center; */
+    height: 1.5rem;
     width: 50%;
     gap: 0.5em;
     justify-content: flex-end;
