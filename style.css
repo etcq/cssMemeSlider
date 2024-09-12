@@ -1,0 +1,185 @@
+html {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: rgb(52, 52, 53);
+    color: white;
+}
+
+input {
+    visibility: hidden;
+    display: none;
+}
+
+
+.slider-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: auto;
+    width: 50vw;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 10vh;
+    height: auto;
+    justify-content: space-between;
+}
+
+.slider-line {
+    flex-shrink: 0;
+    display: flex;
+    height: auto;
+    width: 400%;
+    margin-left: 0%;
+    margin-bottom: 1rem;
+}
+
+.slide {
+    width: 25%;
+}
+
+.slide>img {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;    
+}
+
+
+.des-wrapper {
+    width: 40%;
+    height: 6vh;
+    overflow: hidden;
+}
+
+.description {
+    height: 100%;
+    width: 400%;
+    display: flex;
+}
+
+.text {
+    width: 25%;
+    padding-left: 0.2em;
+    display: flex;
+    align-items: center;
+}
+
+#slide1:checked ~ .slider-line {
+    margin-left: 0%;
+    transition: 2s ease-in-out;
+}
+
+#slide3:checked ~ .des-wrapper>.description{
+    margin-left: 0;
+    transition: 2s ease-in-out;
+}
+
+#slide1:checked ~ .controls>#sl1label>.lb-button {
+    border: 0.1rem solid wheat;
+    background-color: rgb(63, 63, 78);
+}
+
+#slide2:checked ~ .slider-line {
+    margin-left: -100%;
+    transition: 2s ease-in-out;
+}
+
+#slide2:checked ~ .des-wrapper>.description{
+    margin-left: -100%;
+    transition: 2s ease-in-out;
+}
+
+#slide2:checked ~ .controls>#sl2label>.lb-button {
+    border: 0.1rem solid wheat;
+    background-color: rgb(63, 63, 78);
+}
+
+#slide3:checked ~ .slider-line {
+    margin-left: -200%;
+    transition: 2s ease-in-out;
+}
+
+#slide3:checked ~ .des-wrapper>.description{
+    margin-left: -200%;
+    transition: 2s ease-in-out;
+}
+
+
+#slide3:checked ~ .controls>#sl3label>.lb-button {
+    border: 0.1rem solid wheat;
+    background-color: rgb(63, 63, 78);
+}
+
+#slide4:checked ~ .slider-line {
+    margin-left: -300%;
+    transition: 2s ease-in-out;
+}
+
+#slide4:checked ~ .des-wrapper>.description{
+    margin-left: -300%;
+    transition: 2s ease-in-out;
+}
+
+#slide4:checked ~ .controls>#sl4label>.lb-button {
+    border: 0.1rem solid wheat;
+    background-color: rgb(63, 63, 78);
+}
+
+
+
+.controls {
+    display: flex;
+    align-items: center;
+    height: 3vw;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    height: 100%;
+    width: 3vw;
+}
+
+
+.lb-button {
+    
+    background-color: wheat;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+.lb-button:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.lb-button:active {
+    box-shadow: 0rem 0rem 1.2rem white;
+}
+
+
+@media screen and (max-width: 768px) {
+    .slider-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        /* gap: 1vh;     */
+        flex-wrap: nowrap;
+    }
+
+    .controls {
+        justify-content: center;
+        width: 100%;
+        order: 2;
+    }
+
+    .des-wrapper {
+        order:  3;
+        width: 101%;
+    }
+}
